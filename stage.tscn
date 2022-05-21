@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/background.png" type="Texture" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/hour5.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="stage" type="Node2D"]
+
+[node name="spawn_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 88 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="ui"]
+margin_right = 64.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0, 0.909804, 0.952941, 1 )
+custom_colors/font_color_shadow = Color( 0.231373, 0.121569, 0.980392, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "“score : 0"
+uppercase = true
+
+[node name="retry" type="Label" parent="ui"]
+margin_left = 64.0
+margin_top = 72.0
+margin_right = 279.0
+margin_bottom = 104.0
+custom_colors/font_color = Color( 0, 0.909804, 0.952941, 1 )
+custom_colors/font_color_shadow = Color( 0.231373, 0.121569, 0.980392, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "“game over”  
+“-press the enter key to retry-"
+align = 1
+uppercase = true
