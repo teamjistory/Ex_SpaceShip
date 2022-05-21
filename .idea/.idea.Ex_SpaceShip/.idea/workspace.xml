@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e8ef450-1ab0-441a-8483-ddaf017d89e5" name="Changes" comment="@now">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ex_SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ex_SpaceShip/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6e8ef450-1ab0-441a-8483-ddaf017d89e5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,10 +67,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="now" />
     <MESSAGE value="@202205211121" />
     <MESSAGE value="@202205211125" />
     <MESSAGE value="@now" />
-    <option name="LAST_COMMIT_MESSAGE" value="@now" />
+    <MESSAGE value="now" />
+    <option name="LAST_COMMIT_MESSAGE" value="now" />
   </component>
 </project>
