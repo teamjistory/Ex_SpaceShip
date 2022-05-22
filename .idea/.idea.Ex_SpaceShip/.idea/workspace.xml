@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e8ef450-1ab0-441a-8483-ddaf017d89e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asteroid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ex_SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ex_SpaceShip/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mono/metadata/ide_messaging_meta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/metadata/ide_messaging_meta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex_SpaceShip.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ex_SpaceShip.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asteroid.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/asteroid.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/player.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/shot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shot.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/shot.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stage.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/stage.tscn" afterDir="false" />
     </list>
@@ -21,6 +22,7 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6501e74e0e904bacaa92fcd2cdfe0079273c00/71/760339d9/Node.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
@@ -34,14 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.18281536&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Start and Debug.Player">
     <configuration name="Attach to Player" type="ConnectRemote" factoryName="Mono Remote" show_console_on_std_err="false" show_console_on_std_out="false" port="23685" address="localhost">
       <option name="allowRunningInParallel" value="false" />
@@ -90,8 +93,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="@202205211121" />
     <MESSAGE value="@202205211125" />
-    <MESSAGE value="now" />
     <MESSAGE value="@now" />
-    <option name="LAST_COMMIT_MESSAGE" value="@now" />
+    <MESSAGE value="now" />
+    <option name="LAST_COMMIT_MESSAGE" value="now" />
   </component>
 </project>

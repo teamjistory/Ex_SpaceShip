@@ -3,19 +3,22 @@ using System;
 
 public class player : Area2D
 {
-    private const int MoveSpeed = 150;
+    private const int MoveSpeed = 50;
     private const int ScreenWidth = 320;
     private const int ScreenHeight = 180;
+
+    private bool canShot = true;
+    
+    [Signal]
+    delegate void signalDestroyed();
+    
+   /// [Export]
+   /// public PackedScene ShotScene;
+
+    public PackedScene shotScene = (PackedScene) GD.Load("res://shot.tscn");
    
-    public PackedScene ShotScene;
-
-    public override void _Ready()
-    {
-       
-        ShotScene.ResourcePath  = ResourceLoader.Load("res://shot.tscn").ResourcePath;
-       
-    }
-
+   public PackedScene explosionScene = (PackedScene) GD.Load("res://explosion.tscn");
+   
     public override void _Process(float delta)
     {      
         var inputDir = new Vector2();
@@ -54,15 +57,44 @@ public class player : Area2D
             Position = position;
         }
 
-        if (Input.IsKeyPressed((int) KeyList.Space))
+        if (Input.IsKeyPressed((int) KeyList.Space) && canShot)
         {
             var stageNode = GetParent();
-            var shotInstance = (shot)ShotScene.Instance();
-          
-            shotInstance.Position = Position;
-            stageNode.AddChild(shotInstance);
-           
+            //  var shotInstance = (shot)ShotScene.Instance();
+
+            var shotInstance = shotScene.Instance() as shot;
+            var shotInstance2 = shotScene.Instance() as shot;
+
+            shotInstance.Position = Position + new Vector2(9, -5);
+            shotInstance2.Position = Position + new Vector2(9, 5);
             
+            stageNode.AddChild(shotInstance);
+            stageNode.AddChild(shotInstance2);
+            canShot = false;
+            GetNode<Timer>("reload_timer").Start();
+
+
+        }
+       
+    }
+
+    public void _on_reload_timer_timeout()
+    {
+        canShot = true;
+    }
+
+    public void _on_player_area_entered(Area2D area2D)
+    {
+        if (area2D.IsInGroup(("asteroid")))
+        {
+            var stageNode = GetParent();
+            var explosionInstance = shotScene.Instance() as Area2D;
+            explosionInstance.Position = Position;
+            stageNode.AddChild(explosionInstance);
+
+            EmitSignal(nameof(signalDestroyed));
+            QueueFree();
+
         }
         
     }
