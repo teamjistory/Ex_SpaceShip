@@ -16,14 +16,27 @@ public class stage : Node2D
     public override void _Ready()
     {
         GD.Randomize();
-        GetNode<Area2D>("player").Connect("signalDestroyed", this, "_on_player_signalDestroyed");
+        
+        GetNode<Node>("player").Connect("signalDestroyed", this, "_on_player_signalDestroyed");
 
         GetNode<Timer>("spawn_timer").Connect("timeout", this, "_on_spawn_timer_timeout");
         
     }
 
+    public override void _Input(InputEvent @event)
+    {
+        //base._Input(@event);
+        if (Input.IsKeyPressed((int) KeyList.Escape))
+        {
+            GetTree().Quit();
+        }
+        if (isGameOver && Input.IsKeyPressed((int)KeyList.Enter))
+        {
+            GetTree().ChangeScene("res://stage.tscn");
+        }
+        
+    }
 
-    
 
     public void _on_player_signalDestroyed()
     {
@@ -38,6 +51,8 @@ public class stage : Node2D
         asteroidInstance.Position = new Vector2(ScreenWidth + 8, (float) GD.RandRange(0, ScreenHeight));
 
         asteroidInstance.Connect(("signalScore"), this, "_on_player_score");
+        
+        AddChild(asteroidInstance);
 
 
     }

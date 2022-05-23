@@ -28,5 +28,4 @@ frames = SubResource( 2 )
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_player_area_entered"]
-[connection signal="signalDestroyed" from="." to="." method="_on_player_signalDestroyed"]
 [connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

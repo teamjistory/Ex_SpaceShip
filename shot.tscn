@@ -15,7 +15,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="shot" type="Area2D" groups=["asteroid"]]
+[node name="shot" type="Area2D" groups=["shot"]]
 script = ExtResource( 3 )
 
 [node name="damage_zone" type="CollisionShape2D" parent="."]
@@ -23,6 +23,7 @@ shape = SubResource( 3 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_shot_area_entered"]

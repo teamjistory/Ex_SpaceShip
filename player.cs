@@ -7,10 +7,10 @@ public class player : Area2D
     private const int ScreenWidth = 320;
     private const int ScreenHeight = 180;
 
-    private bool canShot = true;
+    public bool canShot = true;
     
     [Signal]
-    delegate void signalDestroyed();
+    public delegate void signalDestroyed();
     
    /// [Export]
    /// public PackedScene ShotScene;
@@ -57,7 +57,7 @@ public class player : Area2D
             Position = position;
         }
 
-        if (Input.IsKeyPressed((int) KeyList.Space) && canShot)
+        if (Input.IsKeyPressed((int) KeyList.Space)  && canShot)
         {
             var stageNode = GetParent();
             //  var shotInstance = (shot)ShotScene.Instance();
@@ -70,6 +70,7 @@ public class player : Area2D
             
             stageNode.AddChild(shotInstance);
             stageNode.AddChild(shotInstance2);
+            
             canShot = false;
             GetNode<Timer>("reload_timer").Start();
 
@@ -82,21 +83,26 @@ public class player : Area2D
     {
         canShot = true;
     }
+    
+    
 
+    
     public void _on_player_area_entered(Area2D area2D)
     {
         if (area2D.IsInGroup(("asteroid")))
         {
             var stageNode = GetParent();
-            var explosionInstance = shotScene.Instance() as Area2D;
+            var explosionInstance = shotScene.Instance() as Node2D;
             explosionInstance.Position = Position;
             stageNode.AddChild(explosionInstance);
 
-            EmitSignal(nameof(signalDestroyed));
-            QueueFree();
+         EmitSignal(nameof(signalDestroyed));
+         QueueFree();
 
-        }
+        } 
         
-    }
+    }  
+    
+    
 }
 

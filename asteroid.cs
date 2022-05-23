@@ -6,7 +6,7 @@ public class asteroid : Area2D
 {
    public PackedScene explosionScene =  GD.Load("res://explosion.tscn") as PackedScene;
    
-   public int moveSpeed = 20;
+   public int moveSpeed = 100;
    public bool scoreEmitted = false;
 
    [Signal]
@@ -16,15 +16,16 @@ public class asteroid : Area2D
    {
       if (area2D.IsInGroup("shot") || area2D.IsInGroup(("player")))
       {
-         if (scoreEmitted is false)
+         if (!scoreEmitted)
          {
             scoreEmitted = true;
             EmitSignal(nameof(signalScore));
             QueueFree();
             var stageNode = GetParent<Node>();
-            var explosionInstance = explosionScene.Instance();
+            var explosionInstance = (Node2D) explosionScene.Instance();
+            explosionInstance.Position = Position;
             stageNode.AddChild(explosionInstance);
-            
+            //stageNode.RemoveChild(explosionInstance);
          }
       }
       
